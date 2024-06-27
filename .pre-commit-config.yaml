@@ -1,0 +1,11 @@
+repos:
+  - repo: https://github.com/pre-commit/mirrors-autopep8
+    rev: v1.5.7  # You can specify the desired version here
+    hooks:
+      - id: autopep8
+
+  - repo: https://github.com/psf/black
+    rev: 23.3.0  # Specify the desired version here
+    hooks:
+      - id: black
+        language_version: python3.12  # Specify your Python version here

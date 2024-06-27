@@ -21,6 +21,9 @@ langchain-openai = "^0.1.11"
 autopep8 = "^2.3.1"
 
 
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.7.1"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
