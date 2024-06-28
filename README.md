@@ -63,10 +63,16 @@ if __name__ == "__main__":
     search_agent = SearchLinkedIn()
 
     # Call the search_linkedin method with a name
-    linkedin_url = search_agent.search_linkedin("John Doe")
+    linkedin_url_by_name = search_agent.search_linkedin("John Doe", by_name=True)
+    print(f"LinkedIn URL by name: {linkedin_url_by_name}")
 
-    # Print the LinkedIn URL
-    print(linkedin_url)
+    # Call the search_linkedin method with a description
+    linkedin_url_by_description = search_agent.search_linkedin("mid-level computer scientist with more than 3 years of AI relevant skills", by_name=False)
+    print(f"LinkedIn URL by description: {linkedin_url_by_description}")
+
+    # Scrape the LinkedIn profile information
+    profile_info = search_agent._search_linkedin_profile(linkedin_url_by_name)
+    print(f"Profile information: {profile_info}")
 ```
 ## Pre-commit Hooks
 This project uses pre-commit to ensure code quality. The configuration for autopep8 and black is included in the .pre-commit-config.yaml file.
@@ -101,4 +107,13 @@ Feel free to open issues or submit pull requests if you find any bugs or have su
 - [OpenAI](https://www.openai.com/)
 - [LangChain](https://github.com/langchain-ai/langchain)
 
+## Business Use Case
+Using Language Models (LLMs) like GPT-3.5 Turbo to automate LinkedIn searches offers significant business advantages over manual searches. Automated searches are more efficient and scalable, allowing organizations to process a high volume of queries quickly and accurately. LLMs can understand and process complex descriptions, ensuring more precise and relevant search results. This capability is crucial for tasks such as talent acquisition, lead generation, and market research, where finding the right profiles efficiently can save time and resources. By integrating LLM-powered search into their workflows, businesses can enhance their operational efficiency, reduce human error, and stay ahead in a competitive landscape.
 
+## Improvements Over the Original
+This repository provides several improvements over the original by [Marco177](https://github.com/emarco177/ice_breaker/commits?author=emarco177), notably:
+
+Enhanced Search Flexibility: Supports searching LinkedIn profiles by both name and detailed descriptions, offering more versatility.
+## References
+
+This project was inspired by the original [repository](https://github.com/emarco177/ice_breaker/commits?author=emarco177) by emarco177.
